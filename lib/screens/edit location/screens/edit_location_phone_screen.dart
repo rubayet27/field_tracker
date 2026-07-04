@@ -121,10 +121,10 @@ class _EditLocationPhoneScreenState extends State<EditLocationPhoneScreen> {
                       width: double.infinity,
                       height: 54,
                       decoration: BoxDecoration(
-                        color: AppColors.primary.withOpacity(0.04),
+                        color: AppColors.primary.withValues(alpha: 0.04),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: AppColors.primary.withOpacity(0.6),
+                          color: AppColors.primary.withValues(alpha: 0.6),
                           width: 1.5,
                           style: BorderStyle.solid,
                         ),

@@ -13,7 +13,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/widgets/primary_app_bar.dart';
 import '../bloc/location_event.dart';
-import '../features/location_card.dart';
 part 'location_phone_screen.dart';
 
 class LocationScreen extends StatelessWidget {

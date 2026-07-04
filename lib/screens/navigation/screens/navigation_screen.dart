@@ -3,10 +3,8 @@ import 'package:field_tracker/screens/navigation/bloc/navigation_bloc.dart';
 import 'package:field_tracker/screens/navigation/bloc/navigation_state.dart';
 import 'package:field_tracker/utils/layout_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../home/screens/home_screen.dart';
 import '../../profile/screens/profile_screen.dart';
 import '../../sync/screens/sync_screen.dart';
 import '../../tasks/screens/task_screen.dart';

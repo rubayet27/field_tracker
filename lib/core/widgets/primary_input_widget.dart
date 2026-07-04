@@ -292,11 +292,6 @@ class _PrimaryInputWidgetState extends State<PrimaryInputWidget> {
         );
       case BorderStyle.none:
         return InputBorder.none;
-      default:
-        return OutlineInputBorder(
-          borderRadius: BorderRadius.circular(radius),
-          borderSide: borderSide,
-        );
     }
   }
 
@@ -339,7 +334,7 @@ class _PrimaryInputWidgetState extends State<PrimaryInputWidget> {
               width: 1,
               color: focusNode.hasFocus
                   ? Theme.of(context).primaryColor
-                  : Colors.grey.withOpacity(0.3),
+                  : Colors.grey.withValues(alpha: 0.3),
             ),
           ],
         ],
@@ -359,7 +354,7 @@ class _PrimaryInputWidgetState extends State<PrimaryInputWidget> {
         color: focusNode.hasFocus
             ? Theme.of(context).primaryColor
             : isDarkMode
-            ? Colors.white.withOpacity(0.6)
+            ? Colors.white.withValues(alpha: 0.6)
             : Colors.grey,
         size: 22,
       ),

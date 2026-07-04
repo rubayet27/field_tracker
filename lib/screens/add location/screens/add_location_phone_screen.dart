@@ -34,9 +34,6 @@ class _AddLocationPhoneScreenState extends State<AddLocationPhoneScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final isDarkMode = theme.brightness == Brightness.dark;
-
     return BlocConsumer<AddLocationBloc, AddLocationState>(
       listener: (context, state) {
         if (state.message != null) {
@@ -98,10 +95,10 @@ class _AddLocationPhoneScreenState extends State<AddLocationPhoneScreen> {
                       width: double.infinity,
                       height: 54,
                       decoration: BoxDecoration(
-                        color: AppColors.primary.withOpacity(0.04),
+                        color: AppColors.primary.withValues(alpha: 0.04),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: AppColors.primary.withOpacity(0.6),
+                          color: AppColors.primary.withValues(alpha: 0.6),
                           width: 1.5,
                           style: BorderStyle
                               .solid, // dashed simulated via styling or simple border

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../app theme/bloc/theme_bloc.dart';
 
-
 class ThemeToggleWidget extends StatelessWidget {
   const ThemeToggleWidget({super.key});
 
@@ -20,14 +19,12 @@ class ThemeToggleWidget extends StatelessWidget {
             curve: Curves.easeInOut,
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: BoxDecoration(
-              color: isDark
-                  ? const Color(0xFF1E1E2E)
-                  : const Color(0xFFE8F4FD),
+              color: isDark ? const Color(0xFF1E1E2E) : const Color(0xFFE8F4FD),
               borderRadius: BorderRadius.circular(16),
               border: Border.all(
                 color: isDark
-                    ? Colors.white.withOpacity(0.1)
-                    : Colors.black.withOpacity(0.08),
+                    ? Colors.white.withValues(alpha: 0.1)
+                    : Colors.black.withValues(alpha: 0.08),
               ),
             ),
             child: Row(
@@ -45,18 +42,17 @@ class ThemeToggleWidget extends StatelessWidget {
                         isDark ? 'Dark mode' : 'Light mode',
                         key: ValueKey(isDark),
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              fontWeight: FontWeight.w600,
-                            ),
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                     Text(
                       'Tap to switch',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: Theme.of(context)
-                                .colorScheme
-                                .onSurface
-                                .withOpacity(0.5),
-                          ),
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.onSurface.withValues(alpha: 0.5),
+                      ),
                     ),
                   ],
                 ),
@@ -96,8 +92,7 @@ class _AnimatedTrack extends StatelessWidget {
           AnimatedAlign(
             duration: const Duration(milliseconds: 350),
             curve: Curves.elasticOut,
-            alignment:
-                isDark ? Alignment.centerRight : Alignment.centerLeft,
+            alignment: isDark ? Alignment.centerRight : Alignment.centerLeft,
             child: Padding(
               padding: const EdgeInsets.all(3),
               child: AnimatedContainer(
@@ -106,12 +101,10 @@ class _AnimatedTrack extends StatelessWidget {
                 height: 24,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: isDark
-                      ? const Color(0xFF2D2B55)
-                      : Colors.white,
+                  color: isDark ? const Color(0xFF2D2B55) : Colors.white,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.15),
+                      color: Colors.black.withValues(alpha: 0.15),
                       blurRadius: 4,
                       offset: const Offset(0, 2),
                     ),

@@ -14,7 +14,6 @@ import '../../../core/widgets/primary_app_bar.dart';
 import '../../../core/widgets/theme_toggle_widget.dart';
 import '../../../utils/sizes/sizes.dart';
 import '../bloc/profile_event.dart';
-import '../features/card_widget.dart';
 import '../features/menu_options.dart';
 import '../features/user_info_widget.dart';
 part 'profile_phone_screen.dart';
