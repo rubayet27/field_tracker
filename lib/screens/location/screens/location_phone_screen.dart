@@ -8,7 +8,32 @@ class LocationPhoneScreen extends StatelessWidget {
     final darkTheme = Theme.of(context).brightness == Brightness.dark;
     return SafeArea(
       child: Scaffold(
-        appBar: PrimaryAppBarWidget(title: "Locations", showBackButton: false),
+        appBar: PrimaryAppBarWidget(
+          title: "Locations",
+          showBackButton: false,
+          actions: [
+            Transform.scale(
+              scale: 0.7,
+              child: FloatingActionButton(
+                onPressed: () async {
+                  final result = await Routes.addLocation.push<bool>();
+                  if (result == true && context.mounted) {
+                    context.read<LocationBloc>().add(GetAllLocation());
+                  }
+                },
+                backgroundColor: darkTheme
+                    ? AppColors.primaryDark
+                    : AppColors.primary,
+                child: Icon(
+                  Icons.add,
+                  color: darkTheme ? AppColors.black : AppColors.white,
+                ),
+              ),
+            ),
+            Sizes.width.w16,
+          ],
+        ),
+
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
             final result = await Routes.addLocation.push<bool>();
@@ -34,7 +59,9 @@ class LocationPhoneScreen extends StatelessWidget {
                   children: [
                     Card(
                       elevation: 2,
-                      color: Colors.white,
+                      color: darkTheme
+                          ? AppColors.componentDark
+                          : AppColors.componentLight,
                       child: PrimaryInputWidget(
                         controller: TextEditingController(),
                         hintText: "Search locations",

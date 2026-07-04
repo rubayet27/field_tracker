@@ -8,4 +8,6 @@ class ApiEndpoints {
   static String getLocations = "/api/v1/locations";
   static String addLocation = "/api/v1/locations";
   static String getTodos = "/api/v1/todos";
+  static String patchTodo(String todoId) => "/api/v1/todos/$todoId";
+  static String syncTodos = "/api/v1/todos/sync";
 }

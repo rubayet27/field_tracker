@@ -1,3 +1,4 @@
+import 'package:field_tracker/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,13 +12,14 @@ class NavbarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return BottomAppBar(
       shape: const CircularNotchedRectangle(),
       notchMargin: 0,
       padding: const EdgeInsets.symmetric(horizontal: 25),
       elevation: 8,
       height: 60,
-      color: Colors.white,
+      color: isDark ? AppColors.componentDark : AppColors.componentLight,
       surfaceTintColor: Colors.transparent,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),

@@ -11,6 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/extensions/routes_extensions.dart';
 import '../../../core/widgets/primary_app_bar.dart';
+import '../../../core/widgets/theme_toggle_widget.dart';
 import '../../../utils/sizes/sizes.dart';
 import '../bloc/profile_event.dart';
 import '../features/card_widget.dart';

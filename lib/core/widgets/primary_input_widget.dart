@@ -117,6 +117,7 @@ class _PrimaryInputWidgetState extends State<PrimaryInputWidget> {
   }
 
   Widget _buildTextFormFieldWidget(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -126,10 +127,10 @@ class _PrimaryInputWidgetState extends State<PrimaryInputWidget> {
           controller: widget.controller,
           focusNode: focusNode,
           autofocus: widget.autoFocus,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w400,
-            color: Colors.black,
+            color: isDark ? AppColors.white : AppColors.black,
           ),
           inputFormatters: widget.inputFormatters,
           obscureText: widget.isPasswordField ? isVisibility : false,
@@ -138,7 +139,7 @@ class _PrimaryInputWidgetState extends State<PrimaryInputWidget> {
           maxLines: widget.maxLines,
           decoration: _buildDecoration(context),
           validator: widget.validatorFunction ?? _setValidator,
-          cursorColor: Colors.black,
+          cursorColor: isDark ? AppColors.white : AppColors.black,
           onChanged: widget.onChanged,
           onTap: () {
             if (!widget.readOnly) {

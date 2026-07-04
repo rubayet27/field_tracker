@@ -41,7 +41,10 @@ class TaskPhoneScreen extends StatelessWidget {
               return Column(
                 children: [
                   Sizes.height.h10,
-                  ProgressCard(completed: 2, total: 6),
+                  ProgressCard(
+                    completed: state.completed ?? 0,
+                    total: state.data.length,
+                  ),
                   Sizes.height.h10,
                   Row(
                     children: List.generate(filterList.length, (index) {
@@ -66,7 +69,12 @@ class TaskPhoneScreen extends StatelessWidget {
                         return TaskCard(
                           task: task,
                           onCheckboxChanged: (value) {
-                            print("adf");
+                            context.read<TaskBloc>().add(
+                              ToggleTaskCompletionEvent(
+                                taskId: task.id,
+                                isCompleted: value,
+                              ),
+                            );
                           },
                         );
                       },

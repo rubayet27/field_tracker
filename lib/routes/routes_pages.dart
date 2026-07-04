@@ -47,6 +47,7 @@ class RoutesPages {
                 create: (_) => LocationBloc()..add(GetAllLocation()),
               ),
               BlocProvider(create: (_) => TaskBloc()..add(GetTodos())),
+              BlocProvider(create: (_) => SyncBloc()..add(LoadSyncStatus())),
             ],
             child: NavigationScreen(),
           );

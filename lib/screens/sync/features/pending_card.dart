@@ -1,17 +1,19 @@
 import 'package:field_tracker/core/widgets/text_widget.dart';
+import 'package:field_tracker/screens/sync/model/pending_todo_change.dart';
 import 'package:field_tracker/utils/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../../../utils/dimensions.dart';
 import '../../../utils/sizes/border_radius.dart';
 import '../../../utils/sizes/sizes.dart';
 
 class SyncItemCard extends StatelessWidget {
-  // final SyncItem item;
+  final PendingTodoChange item;
 
   const SyncItemCard({
     super.key,
-    // required this.item,
+    required this.item,
   });
 
   @override
@@ -43,16 +45,16 @@ class SyncItemCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "item.title",
-                    style: const TextStyle(
+                    item.title,
+                    style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: isDark ? Colors.white : Colors.black,
                     ),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    '{item.subtitle} · {item.time}',
+                    '${item.isCompleted ? "Checked" : "Unchecked"} · ${_formatTime(item.changedAt)}',
                     style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                   ),
                 ],
@@ -65,7 +67,7 @@ class SyncItemCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(AppRadius.sm),
               ),
               child: TextWidget(
-                formatStatus(false),
+                "Pending",
                 fontSize: Dimensions.labelMedium,
                 fontWeight: FontWeight.bold,
                 color: AppColors.warning,
@@ -77,10 +79,7 @@ class SyncItemCard extends StatelessWidget {
     );
   }
 
-  String formatStatus(bool status) {
-    if (status) {
-      return "Completed";
-    }
-    return "Pending";
+  String _formatTime(DateTime dateTime) {
+    return DateFormat('hh:mm a').format(dateTime);
   }
 }

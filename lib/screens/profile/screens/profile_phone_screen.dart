@@ -7,7 +7,11 @@ class ProfilePhoneScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: PrimaryAppBarWidget(title: "Profile", showBackButton: false),
+        appBar: PrimaryAppBarWidget(
+          title: "Profile",
+          showBackButton: false,
+          actions: [ThemeToggleWidget()],
+        ),
         body: Padding(
           padding: Sizes.padding.ph20,
           child: ListView(

@@ -11,6 +11,8 @@ import 'package:field_tracker/screens/registration/screens/registration_screen.d
 import 'package:field_tracker/screens/splash/bloc/splash_bloc.dart';
 import 'package:field_tracker/screens/splash/bloc/splash_event.dart';
 import 'package:field_tracker/screens/splash/screens/splash_screen.dart';
+import 'package:field_tracker/screens/sync/bloc/sync_bloc.dart';
+import 'package:field_tracker/screens/sync/bloc/sync_event.dart';
 import 'package:field_tracker/screens/tasks/bloc/task_event.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

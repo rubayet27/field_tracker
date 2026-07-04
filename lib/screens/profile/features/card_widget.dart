@@ -1,3 +1,4 @@
+import 'package:field_tracker/core/widgets/text_widget.dart';
 import 'package:field_tracker/utils/app_colors.dart';
 import 'package:field_tracker/utils/dimensions.dart';
 import 'package:field_tracker/utils/sizes/border_radius.dart';
@@ -39,12 +40,7 @@ class CardWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 16.0),
-            Expanded(
-              child: Text(
-                title,
-                style: const TextStyle(fontSize: 16.0, color: Colors.black87),
-              ),
-            ),
+            Expanded(child: TextWidget(title, fontSize: 16.0)),
             Icon(Icons.arrow_forward_ios, size: 16.0, color: Colors.grey[400]),
           ],
         ),

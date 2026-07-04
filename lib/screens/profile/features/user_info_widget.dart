@@ -67,7 +67,11 @@ class UserInfoWidget extends StatelessWidget {
   Column _nameInfo({String? name, String? email}) {
     return Column(
       children: [
-        TextWidget(name ?? "", fontSize: Dimensions.titleLarge),
+        TextWidget(
+          name ?? "",
+          fontSize: Dimensions.titleLarge,
+          fontWeight: FontWeight.w700,
+        ),
         TextWidget(email ?? "", fontSize: Dimensions.titleSmall),
       ],
     );

@@ -3,6 +3,8 @@ import 'package:field_tracker/utils/dimensions.dart';
 import 'package:field_tracker/utils/sizes/sizes.dart';
 import 'package:flutter/material.dart';
 
+import 'text_widget.dart';
+
 class PrimaryAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {
   const PrimaryAppBarWidget({
@@ -72,15 +74,11 @@ class PrimaryAppBarWidget extends StatelessWidget
         padding: Sizes.padding.po(
           left: showBackButton ? 0 : Dimensions.defaultPaddingSize * 0.8,
         ),
-        child: Text(
+        child: TextWidget(
           title,
-          style:
-              titleStyle ??
-              const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-                color: Colors.black,
-              ),
+          fontSize: 20,
+          fontWeight: FontWeight.w700,
+          style: titleStyle,
         ),
       ),
       actions: actions,

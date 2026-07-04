@@ -109,11 +109,12 @@ class LocationCard extends StatelessWidget {
       children: [
         Icon(Icons.location_searching_sharp, size: Dimensions.iconSm * 0.8),
         TextWidget(
-          location.latitude.toString(),
+          location.latitude.toStringAsFixed(4),
           fontSize: Dimensions.labelSmall,
         ),
+        Text(", "),
         TextWidget(
-          location.longitude.toString(),
+          location.longitude.toStringAsFixed(4),
           fontSize: Dimensions.labelSmall,
         ),
       ],

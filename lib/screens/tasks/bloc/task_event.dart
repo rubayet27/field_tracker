@@ -6,7 +6,7 @@ class ChangeFilter extends TaskEvent {
 }
 
 class ToggleTaskCompletionEvent extends TaskEvent {
-  final int taskId;
+  final String taskId;
   final bool isCompleted;
 
   ToggleTaskCompletionEvent({required this.taskId, required this.isCompleted});
